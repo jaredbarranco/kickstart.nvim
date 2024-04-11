@@ -266,7 +266,7 @@ require('lazy').setup({
   --    Uncomment the following line and add your plugins to `lua/custom/plugins/*.lua` to get going.
   --
   --    For additional information see: https://github.com/folke/lazy.nvim#-structuring-your-plugins
-  -- { import = 'custom.plugins' },
+  --  { import = 'custom.plugins' },
 }, {})
 
 -- [[ Setting options ]]
@@ -311,6 +311,10 @@ vim.o.completeopt = 'menuone,noselect'
 vim.o.termguicolors = true
 
 -- [[ Basic Keymaps ]]
+
+-- For exiting terminal mode with Esc
+-- vim.keymap.set('t', '<Esc>', [[<C-\><C-n>]], { noremap = true })
+-- vim.keymap.set('t', '<C-w>h', "<C-\\><C-n><C-w>h", { silent = true })
 
 -- Keymaps for better default experience
 -- See `:help vim.keymap.set()`
@@ -570,7 +574,7 @@ local servers = {
   -- gopls = {},
   -- pyright = {},
   -- rust_analyzer = {},
-  -- tsserver = {},
+  tsserver = {},
   -- html = { filetypes = { 'html', 'twig', 'hbs'} },
 
   lua_ls = {
