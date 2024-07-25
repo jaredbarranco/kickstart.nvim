@@ -1,0 +1,7 @@
+local M = {}
+
+function M.close_bufs()
+	vim.cmd("%bd|e#|bd#")
+end
+
+return M
