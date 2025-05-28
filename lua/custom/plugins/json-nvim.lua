@@ -1,6 +1,6 @@
 return {
   'jaredbarranco/json-nvim',
-  branch = 'feat/heredoc-buffer-read',
+  branch = 'master',
   ft = 'json', -- only load for json filetype
   config = function()
     vim.keymap.set('n', '<leader>jff', '<cmd>JsonFormatFile<cr>')
