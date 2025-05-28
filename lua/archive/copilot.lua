@@ -7,3 +7,5 @@ return {
     'github/copilot.vim',
   },
 }
+--
+-- PLUGIN DISABLED BECAUSE NODEJS HAS TO BE V20 OR GREATER
