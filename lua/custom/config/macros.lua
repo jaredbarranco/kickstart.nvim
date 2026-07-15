@@ -17,6 +17,24 @@ function M.setup_js_macros()
   M.set_console_log_macro()
 end
 
+-- Map a filetype to a key suffix under <leader>ft
+local ft_shortcuts = {
+  j = 'json',
+  y = 'yaml',
+  l = 'lua',
+  p = 'python',
+  m = 'markdown',
+  t = 'typescript',
+  s = 'javascript',
+  h = 'html',
+  c = 'css',
+}
+
+function M.set_filetype_and_format(ft)
+  vim.bo.filetype = ft
+  vim.cmd.Format()
+end
+
 -- Global setup: attach autocommands
 function M.setup()
   vim.api.nvim_create_autocmd('FileType', {
@@ -25,6 +43,13 @@ function M.setup()
       M.setup_js_macros()
     end,
   })
+
+  -- Set filetype + format — <leader>ft{key}
+  for key, ft in pairs(ft_shortcuts) do
+    vim.keymap.set('n', '<leader>ft' .. key, function()
+      M.set_filetype_and_format(ft)
+    end, { desc = 'Set ft=' .. ft .. ' & Format' })
+  end
 end
 
 return M
