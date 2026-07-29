@@ -20,6 +20,7 @@ end
 -- Map a filetype to a key suffix under <leader>ft
 local ft_shortcuts = {
   j = 'json',
+  x = 'x12',
   y = 'yaml',
   l = 'lua',
   p = 'python',
@@ -32,7 +33,14 @@ local ft_shortcuts = {
 
 function M.set_filetype_and_format(ft)
   vim.bo.filetype = ft
-  vim.cmd.Format()
+  if ft == 'x12' then
+    vim.cmd([[%s/\n//g]])
+    vim.cmd([[%s/\~/\~\r/g]])
+    vim.cmd([[normal! gg]])
+    vim.cmd([[nohlsearch]])
+  else
+    vim.cmd.Format()
+  end
 end
 
 -- Global setup: attach autocommands
