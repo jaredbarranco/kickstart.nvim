@@ -209,6 +209,8 @@ do
     },
   }
 
+  vim.keymap.set('n', '<leader>pv', vim.cmd.Ex, { desc = '[P]roject root e[X]plore (netrw)' })
+
   vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostic [Q]uickfix list' })
 
   -- Exit terminal mode in the builtin terminal with a shortcut that is a bit easier
