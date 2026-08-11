@@ -874,14 +874,7 @@ do
     },
 
     sources = {
-      default = { 'lsp', 'path', 'snippets', 'supermaven' },
-      providers = {
-        supermaven = {
-          name = 'supermaven',
-          module = 'blink-cmp-supermaven',
-          async = true,
-        },
-      },
+      default = { 'lsp', 'path', 'snippets' },
     },
 
     snippets = { preset = 'luasnip' },
