@@ -4,4 +4,10 @@ test.sh
 nvim
 
 spell/
-lazy-lock.json
+
+# Personal fork: track nvim-pack-lock.json in version control
+# - see :help vim.pack-lockfile
+# (Upstream ignores it to avoid unneeded merge conflicts.)
+# nvim-pack-lock.json
+
+.DS_Store

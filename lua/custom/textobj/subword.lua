@@ -4,7 +4,7 @@ function M.get_subword_bounds(line, col)
   if not line or line == '' then return end
 
   local char = line:sub(col + 1, col + 1)
-  if not char or not char:match('[%w_]') then return end
+  if not char or not char:match '[%w_]' then return end
 
   if char == '_' then return col, col end
 
@@ -16,15 +16,18 @@ function M.get_subword_bounds(line, col)
     local cur = line:sub(start + 1, start + 1)
     local prev = line:sub(start, start)
 
-    if not cur:match(wc) then start = start + 1 break end
+    if not cur:match(wc) then
+      start = start + 1
+      break
+    end
 
     if prev == '_' or cur == '_' then break end
 
-    if prev:match('[a-z]') and cur:match('[A-Z]') then break end
+    if prev:match '[a-z]' and cur:match '[A-Z]' then break end
 
-    if prev:match('[A-Z]') and cur:match('[A-Z]') and start < n then
+    if prev:match '[A-Z]' and cur:match '[A-Z]' and start < n then
       local next_c = line:sub(start + 2, start + 2)
-      if next_c and next_c:match('[a-z]') then break end
+      if next_c and next_c:match '[a-z]' then break end
     end
 
     start = start - 1
@@ -48,11 +51,11 @@ function M.get_subword_bounds(line, col)
 
     if next_c and not next_c:match(wc) then break end
 
-    if cur:match('[a-z]') and next_c and next_c:match('[A-Z]') then break end
+    if cur:match '[a-z]' and next_c and next_c:match '[A-Z]' then break end
 
-    if cur:match('[A-Z]') and next_c and next_c:match('[A-Z]') and finish + 2 < n then
+    if cur:match '[A-Z]' and next_c and next_c:match '[A-Z]' and finish + 2 < n then
       local after_next = line:sub(finish + 3, finish + 3)
-      if after_next and after_next:match('[a-z]') then break end
+      if after_next and after_next:match '[a-z]' then break end
     end
 
     finish = finish + 1

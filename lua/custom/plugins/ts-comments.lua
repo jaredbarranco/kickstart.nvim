@@ -1,8 +1,3 @@
-return {
-  {
-    'folke/ts-comments.nvim',
-    opts = {},
-    event = 'VeryLazy',
-    enabled = vim.fn.has 'nvim-0.10.0' == 1,
-  },
-}
+-- folke/ts-comments.nvim - treesitter-aware comments
+vim.pack.add { 'https://github.com/folke/ts-comments.nvim' }
+require('ts-comments').setup {}
