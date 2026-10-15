@@ -81,6 +81,10 @@
       "src": "https://github.com/navarasu/onedark.nvim",
       "version": "'master'"
     },
+    "openingh.nvim": {
+      "rev": "7cc8c897cb6b34d8ed28e99d95baccef609ed251",
+      "src": "https://github.com/Almo7aya/openingh.nvim"
+    },
     "plenary.nvim": {
       "rev": "74b06c6c75e4eeb3108ec01852001636d85a932b",
       "src": "https://github.com/nvim-lua/plenary.nvim"
