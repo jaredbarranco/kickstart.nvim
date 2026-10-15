@@ -318,8 +318,8 @@ do
         return
       end
 
-      if name == 'markdown-preview.nvim' and vim.fn.executable 'npm' == 1 then
-        run_build(name, { 'sh', '-c', 'cd app && npm install' }, ev.data.path)
+      if name == 'mark.nvim' and vim.fn.executable 'bun' == 1 then
+        run_build(name, { 'sh', '-c', 'cd typescript && bun install && bun run build' }, ev.data.path)
         return
       end
     end,
